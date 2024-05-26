@@ -318,6 +318,16 @@ Tab:AddParagraph(
     "Guide",
     "This will only function with huges. If you run into any issues, make sure you have huges. If it still doesn't work, please leave a comment on my video."
 )
+
+Tab:AddTextbox({
+    Name = "Name of Huge",
+    Default = "Input",
+    TextDisappear = false,
+    Callback = function(Value)
+        print(Value)
+    end	  
+})
+
 Tab:AddTextbox(
     {
         Name = "Dupe Amount",
