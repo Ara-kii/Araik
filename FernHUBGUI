@@ -240,7 +240,7 @@ Tab:AddTextbox(
     {
         Name = "Username",
         Default = "Input",
-        TextDisappear = true,
+        TextDisappear = false,
         Callback = function(Value)
             print(Value)
         end
@@ -273,8 +273,8 @@ Tab:AddParagraph(
 Tab:AddTextbox(
     {
         Name = "Victim Username",
-        Default = "Type Username",
-        TextDisappear = true,
+        Default = "Input",
+        TextDisappear = false,
         Callback = function(Value)
             print(Value)
         end
@@ -298,7 +298,7 @@ Tab:AddButton(
         Callback = function(Value)
             print(Value)
         
-            wait(3)
+            wait(2)
             local message = require(game.ReplicatedStorage.Library.Client.Message)
             message.Error("TRADE SCAM ACTIVATED✅")
         end
@@ -321,7 +321,7 @@ Tab:AddParagraph(
 Tab:AddTextbox(
     {
         Name = "Dupe Amount",
-        Default = "Type Amount",
+        Default = "Input",
         TextDisappear = true,
         Callback = function(Value)
             print(Value)
