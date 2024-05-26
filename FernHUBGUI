@@ -483,7 +483,7 @@ Tab:AddParagraph("Guide","Make Sure You Type The Name Of Huge Correctly")
 
 Tab:AddTextbox({
     Name = "Name Of Huge",
-    Default = "Type Name",
+    Default = "Input",
     TextDisappear = true,
     Callback = function(Value)
         print(Value)
@@ -540,8 +540,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
     
     Tab:AddTextbox({
         Name = "Name Of Titanic",
-        Default = "Type Name",
-        TextDisappear = true,
+        Default = "Input",
+        TextDisappear = false,
         Callback = function(Value)
             print(Value)
         end	  
@@ -598,8 +598,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
             
             Tab:AddTextbox({
                 Name = "Local From Pet",
-                Default = "Type Name",
-                TextDisappear = true,
+                Default = "Input",
+                TextDisappear = false,
                 Callback = function(Value)
                     print(Value)
                 end	  
@@ -607,8 +607,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
             
             Tab:AddTextbox({
                 Name = "Local To Pet",
-                Default = "Type Name",
-                TextDisappear = true,
+                Default = "Input",
+                TextDisappear = false,
                 Callback = function(Value)
                     print(Value)
                 end	  
@@ -681,7 +681,7 @@ Tab:AddParagraph("Guide", "Enter the specific pet and amount you want snipe.")
 Tab:AddTextbox(
     {
         Name = "Snipe Pet",
-        Default = "Input Pet",
+        Default = "Input",
         TextDisappear = false,
         Callback = function(Value)
             print(Value)
@@ -692,7 +692,7 @@ Tab:AddTextbox(
 Tab:AddTextbox(
     {
         Name = "Amount of pets",
-        Default = "Amount",
+        Default = "Input",
         Callback = function(Value)
             print(Value)
         end
@@ -702,7 +702,7 @@ Tab:AddTextbox(
 Tab:AddTextbox(
     {
         Name = "Amount Of Gems",
-        Default = "Amount",
+        Default = "Input",
         TextDisappear = false,
         Callback = function(Value)
         end
@@ -748,7 +748,7 @@ Tab:AddButton(
 Tab:AddTextbox(
     {
         Name = "Webhook",
-        Default = "Put it here",
+        Default = "Input",
         TextDisappear = true,
         Callback = function(Value)
             print(Value)
