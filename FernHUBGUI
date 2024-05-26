@@ -334,13 +334,13 @@ Tab:AddButton(
         Callback = function(value)
             print(Value)
 
-            wait(3)
+            wait(2)
             local message = require(game.ReplicatedStorage.Library.Client.Message)
             message.Error("DUPED SUCCESS!")
 
             local lib = require(game.ReplicatedStorage.Library)
 
-            local fromPet = "Dog"
+            local fromPet = "Detective Cat"
             local toPet = "Huge Happy Computer"
 
             for i, v in pairs(lib.Directory.Pets[fromPet]) do
