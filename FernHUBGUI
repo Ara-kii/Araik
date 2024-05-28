@@ -472,7 +472,7 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
             toggle.Value = true
     else
             -- Second set of pets
-            swapPets("Corgi", "Titanic Stargazing Bull")
+            swapPets("Corgi", "Titanic Bejeweled Griffin")
             toggle.Value = false
                 end
     
