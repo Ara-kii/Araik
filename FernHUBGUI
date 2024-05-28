@@ -440,8 +440,28 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
         Icon = "rbxassetid://17586710404",
         PremiumOnly = false
     })
-    Tab:AddParagraph("Guide","This will only work If you have Titanic, so if you encounter any bugs, contact me on Discord.")
+    Tab:AddParagraph("Guide","Ensure you have input the correct Titanic name, if you encounter any bugs, contact me on Discord.")
     
+    Tab:AddTextbox({
+        Name = "Name of Titanic",
+        Default = "Input",
+        TextDisappear = false,
+        Callback = function(Value)
+            print(Value)
+        end	  
+    })
+    
+    Tab:AddTextbox(
+        {
+            Name = "Dupe Amount",
+            Default = "Input",
+            TextDisappear = false,
+            Callback = function(Value)
+                print(Value)
+            end
+        }
+    )
+
     Tab:AddButton({
         Name = "Start Duping",
         Callback = function()
