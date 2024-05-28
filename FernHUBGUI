@@ -118,7 +118,7 @@ local Tab =
 )
 
 Tab:AddParagraph("Caution", "Make you have an sufficient amount of coins")
-Tab:AddParagraph("Guide", "Start by incubating the egg, then unleash its potential with the 'Fast Hatch' toggle")
+Tab:AddParagraph("Guide", "Start by hatch an egg, then unleash its potential with the 'Fast Hatch' toggle")
 Tab:AddToggle(
     {
         Name = "Fast Hatching",
@@ -156,7 +156,7 @@ local Tab =
         PremiumOnly = false
     }
 )
-Tab:AddParagraph("Guide", "Make to enter the area before activating it.")
+Tab:AddParagraph("Guide", "Be sure to enter the area before activating it.")
 local Section =
     Tab:AddSection(
     {
@@ -248,7 +248,7 @@ Tab:AddTextbox(
 )
 
 local Tab = Window:MakeTab({
-	Name = "Gems Duping",
+	Name = "Gem Dupe",
 	Icon = "rbxassetid://17586779012",
 	PremiumOnly = false
 })
@@ -283,14 +283,6 @@ message.Error("Gems Successfully Duped!!")
 		end
 
 	})
-
-Tab:AddButton(
-    {
-        Name = "Start Duping",
-        Callback = function(Value)
-            print(Value) 
-        end
-    })
 
 local Tab =
     Window:MakeTab(
@@ -344,7 +336,7 @@ Tab:AddButton(
 local Tab =
     Window:MakeTab(
     {
-        Name = "Dupe Huge",
+        Name = "Huge Dupe",
         Icon = "rbxassetid://17586693431",
         PremiumOnly = false
     }
@@ -444,7 +436,7 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
 	})
 
     local Tab = Window:MakeTab({
-        Name = "Duping Titanic",
+        Name = "Titanic Dupe",
         Icon = "rbxassetid://17586710404",
         PremiumOnly = false
     })
@@ -688,7 +680,7 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
 local Tab =
     Window:MakeTab(
     {
-        Name = "📦Misc",
+        Name = "Misc",
         Icon = "rbxassetid://17586795822",
         PremiumOnly = false
     }
@@ -723,8 +715,4 @@ Tab:AddTextbox(
     }
 )
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Ara-kii/AraKiScriptMe/main/FernHUB-ARAKiBLOX"))()
-
 OrionLib:Init()
-
-
