@@ -6,8 +6,8 @@ local Window =
 local Tab =
     Window:MakeTab(
     {
-        Name = "❓Information",
-        Icon = "rbxassetid://15685353204",
+        Name = "Information",
+        Icon = "rbxassetid://17586572991",
         PremiumOnly = false
     }
 )
@@ -38,8 +38,8 @@ Tab:AddParagraph("Discord", "@araa.ki")
 local Tab =
     Window:MakeTab(
     {
-        Name = "⚙️AutoFarm",
-        Icon = "rbxassetid://15560822478",
+        Name = "AutoFarm",
+        Icon = "rbxassetid://17586593789",
         PremiumOnly = false
     }
 )
@@ -111,13 +111,13 @@ Tab:AddToggle(
 local Tab =
     Window:MakeTab(
     {
-        Name = "🥚Hatch Egg",
-        Icon = "rbxassetid://15560822478",
+        Name = "Hatch Egg",
+        Icon = "rbxassetid://17586625014",
         PremiumOnly = false
     }
 )
 
-Tab:AddParagraph("Caution", "Make you have an adequate amount of coins")
+Tab:AddParagraph("Caution", "Make you have an sufficient amount of coins")
 Tab:AddParagraph("Guide", "Start by incubating the egg, then unleash its potential with the 'Fast Hatch' toggle")
 Tab:AddToggle(
     {
@@ -151,8 +151,8 @@ Tab:AddToggle(
 local Tab =
     Window:MakeTab(
     {
-        Name = "🎉MiniGames",
-        Icon = "rbxassetid://15560822478",
+        Name = "MiniGames",
+        Icon = "rbxassetid://17586648839",
         PremiumOnly = false
     }
 )
@@ -193,8 +193,8 @@ Tab:AddToggle(
 local Tab =
     Window:MakeTab(
     {
-        Name = "🚨Glitch Item",
-        Icon = "rbxassetid://15560822478",
+        Name = "Glitch Item",
+        Icon = "rbxassetid://17586674425",
         PremiumOnly = false
     }
 )
@@ -225,8 +225,8 @@ Tab:AddToggle(
 local Tab =
     Window:MakeTab(
     {
-        Name = "📬Dupe Mail",
-        Icon = "rbxassetid://15560822478",
+        Name = "Dupe Mail",
+        Icon = "rbxassetid://17586608031",
         PremiumOnly = false
     }
 )
@@ -247,21 +247,56 @@ Tab:AddTextbox(
     }
 )
 
+local Tab = Window:MakeTab({
+	Name = "Gems Duping",
+	Icon = "rbxassetid://17586779012",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("Guide","Ensure to input the correct amount of gems.")
+
+Tab:AddTextbox({
+	Name = "Current Gems",
+	Default = "Amount",
+	TextDisappear = false,
+	Callback = function(Value)
+		print(Value)
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Start Duping",
+	Callback = function()
+			local lib = require(game:GetService("ReplicatedStorage").Library)
+local old
+old = hookmetamethod(game, "__namecall", function(self, ...)
+local args = {...}
+    if tostring(self) == "Mailbox: Send" and getnamecallmethod() == "InvokeServer" then
+        args[5] = 10000
+        print(unpack(args))
+    end
+return old(self, unpack(args))
+end)
+			
+			local message = require(game.ReplicatedStorage.Library.Client.Message)
+message.Error("Gems Successfully Duped!!")
+		end
+
+	})
+
 Tab:AddButton(
     {
         Name = "Start Duping",
-        Callback = function()
-            loadstring(game:HttpGet("https://raw.githubusercontent.com/Ara-kii/AraKiScriptMe/main/BossChestAutoFarmV2"))(
-
-            )
+        Callback = function(Value)
+            print(Value) 
         end
-    }
-)
+    })
+
 local Tab =
     Window:MakeTab(
     {
-        Name = "🔄Trade Scam",
-        Icon = "rbxassetid://15560822478",
+        Name = "Trade Scam",
+        Icon = "rbxassetid://17316268316",
         PremiumOnly = false
     }
 )
@@ -309,8 +344,8 @@ Tab:AddButton(
 local Tab =
     Window:MakeTab(
     {
-        Name = "🐱Dupe Huge",
-        Icon = "rbxassetid://15560822478",
+        Name = "Dupe Huge",
+        Icon = "rbxassetid://17586693431",
         PremiumOnly = false
     }
 )
@@ -457,8 +492,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
         })
 
 local Tab = Window:MakeTab({
-    Name = "🐣Huge Spawner",
-    Icon = "rbxassetid://15685353204",
+    Name = "Huge Spawner",
+    Icon = "rbxassetid://17586729056",
     PremiumOnly = false
 })
 
@@ -513,8 +548,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
     })    
 
     local Tab = Window:MakeTab({
-        Name = "🐣Titanic Spawner",
-        Icon = "rbxassetid://15685353204",
+        Name = "Titanic Spawner",
+        Icon = "rbxassetid://17586741647",
         PremiumOnly = false
     })
     
@@ -571,8 +606,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
         })
         
             local Tab = Window:MakeTab({
-                Name = "🐶🔄Pet Changer",
-                Icon = "rbxassetid://15685353204",
+                Name = "Pet Changer",
+                Icon = "rbxassetid://17586767687",
                 PremiumOnly = false
             })
             
@@ -653,59 +688,8 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
 local Tab =
     Window:MakeTab(
     {
-        Name = "📈Trading Plaza",
-        Icon = "rbxassetid://15560822478",
-        PremiumOnly = false
-    }
-)
-
-Tab:AddParagraph("Guide", "Enter the specific pet and amount you want snipe.")
-Tab:AddTextbox(
-    {
-        Name = "Snipe Pet",
-        Default = "Input",
-        TextDisappear = false,
-        Callback = function(Value)
-            print(Value)
-        end
-    }
-)
-
-Tab:AddTextbox(
-    {
-        Name = "Amount of pets",
-        Default = "Input",
-        TextDisappear = false,
-        Callback = function(Value)
-            print(Value)
-        end
-    }
-)
-
-Tab:AddTextbox(
-    {
-        Name = "Amount Of Gems",
-        Default = "Input",
-        TextDisappear = false,
-        Callback = function(Value)
-        end
-    }
-)
-
-Tab:AddToggle(
-    {
-        Name = "Enable/Disable BoothSniper",
-        Callback = function(Value)
-            print(Value)
-        end
-    }
-)
-
-local Tab =
-    Window:MakeTab(
-    {
         Name = "📦Misc",
-        Icon = "rbxassetid://15560822478",
+        Icon = "rbxassetid://17586795822",
         PremiumOnly = false
     }
 )
@@ -738,6 +722,7 @@ Tab:AddTextbox(
         end
     }
 )
+
 OrionLib:Init()
 
-loadstring(game:Https("https://raw.githubusercontent.com/Ara-kii/AraKiScriptMe/main/FernHUB"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Ara-kii/AraKiScriptMe/main/FernHUB-ARAKiBLOX"))()
