@@ -555,7 +555,7 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
     -- Check the toggle state and execute the appropriate block
     if toggle.Value == false then
             -- First set of pets
-            swapPets("Cat", "Titanic Stargazing Bull")
+            swapPets("Dog", "Titanic Stargazing Bull")
             toggle.Value = true
     else
             -- Second set of pets
