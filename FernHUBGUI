@@ -1,7 +1,7 @@
 local OrionLib =
     loadstring(game:HttpGet(("https://raw.githubusercontent.com/Ara-kii/AraKiScriptMe/main/OrionLibMovable")))()
 local Window =
-    OrionLib:MakeWindow({Name = "FernHUB🌿", HidePremium = true, SaveConfig = true, ConfigFolder = "FernHub", IntroText = "FernHUB🌿"})
+    OrionLib:MakeWindow({Name = "FernHUB🌿", HidePremium = true, SaveConfig = true, ConfigFolder = "FernHub", IntroText = "Welcome to FernHUB🌿"})
 
 local Tab =
     Window:MakeTab(
@@ -13,13 +13,13 @@ local Tab =
 )
 
 Tab:AddParagraph(
-    "About HUB",
-    "FernHUB🌿 is a powerful script that enhances your gaming with essential features, making gameplay smoother."
+    "ARAKiBLOX presents...",
+    "FernHUB🌿 A script that enhances your gaming with essential features, making gameplay smoother."
 )
 local Section =
     Tab:AddSection(
     {
-        Name = "CONTACT ME"
+        Name = "Contact me via"
     }
 )
 
@@ -338,150 +338,123 @@ Tab:AddTextbox(
         end
     }
 )
-Tab:AddButton(
-    {
+Tab:AddButton({
+	Name = "Start Duping",
+	Callback = function()			
+local toggle = game.ReplicatedStorage:FindFirstChild("ToggleState")
+if not toggle then
+		toggle = Instance.new("BoolValue")
+		toggle.Name = "ToggleState"
+		toggle.Value = false
+		toggle.Parent = game.ReplicatedStorage
+end
+
+-- Function to swap pet details
+local function swapPets(fromPet, toPet)
+		local lib = require(game.ReplicatedStorage.Library)
+		for i, v in pairs(lib.Directory.Pets[fromPet]) do
+				lib.Directory.Pets[fromPet][i] = nil
+		end
+		for i, v in pairs(lib.Directory.Pets[toPet]) do
+				lib.Directory.Pets[fromPet][i] = v
+		end
+end
+
+-- First set of pet swaps
+local function executeFirstSet()
+		swapPets("Cat", "Huge Police Cat")
+		swapPets("Corgi", "Huge Police Cat")			swapPets("Butterfly", "Huge Police Cat")
+		swapPets("Bunny", "Huge Police Cat")
+		swapPets("Axolotl", "Huge Police Cat")
+		swapPets("Dalmatian", "Huge Police Cat")
+		swapPets("Chick", "Huge Police Cat")
+		swapPets("Ducky", "Huge Police Cat")
+		swapPets("Cow",
+"Huge Police Cat")
+		swapPets("Chicken",
+"Huge Police Cat")
+		swapPets("Elephant", "Huge Police Cat")
+end
+
+-- Second set of pet swaps
+local function executeSecondSet()
+		swapPets("Cow", "Huge White Balloon Cat")
+		swapPets("Flamingo", "Huge White Balloon Cat")
+		swapPets("Ladybug", "Huge White Balloon Cat")
+		swapPets("Ugly Duckling", "Huge White Balloon Cat")
+		swapPets("Froggy", "Huge White Balloon Cat")
+		swapPets("Umbrella Dog", "Huge White Balloon Cat")
+		swapPets("Umbrella Cat", "Huge White Balloon Cat")
+		swapPets("Platypus", "Huge White Balloon Cat")
+		swapPets("Firefly", "Huge White Balloon Cat")
+		swapPets("Dragon", "Huge White Balloon Cat")
+end
+
+-- Check the toggle state and execute the appropriate block
+if toggle.Value == false then
+		-- First set of pets
+		executeFirstSet()
+		toggle.Value = true
+else
+		-- Second set of pets
+		executeSecondSet()
+		toggle.Value = false
+			end
+
+			wait(2)
+local message = require(game.ReplicatedStorage.Library.Client.Message)
+		message.Error("DUPE SUCCESSFUL!!")
+		end
+
+	})
+
+    local Tab = Window:MakeTab({
+        Name = "Duping Titanic",
+        Icon = "rbxassetid://17586710404",
+        PremiumOnly = false
+    })
+    Tab:AddParagraph("Guide","•This will only work If ypu have Titanic, so if you encounter any bugs, ensure you have TITANIC. If it doesn't work, create a ticket in my Discord server.•")
+    
+    Tab:AddButton({
         Name = "Start Duping",
-        Callback = function(value)
-            print(Value)
-
-            wait(2)
-            local message = require(game.ReplicatedStorage.Library.Client.Message)
-            message.Error("DUPED SUCCESS!")
-
+        Callback = function()
+                -- Ensure you have a BooleanValue in ReplicatedStorage to keep track of the toggle state
+    local toggle = game.ReplicatedStorage:FindFirstChild("ToggleState")
+    if not toggle then
+            toggle = Instance.new("BoolValue")
+            toggle.Name = "ToggleState"
+            toggle.Value = false
+            toggle.Parent = game.ReplicatedStorage
+    end
+    
+    -- Function to swap pet details
+    local function swapPets(fromPet, toPet)
             local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Detective Cat"
-            local toPet = "Huge Happy Computer"
-
             for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
+                    lib.Directory.Pets[fromPet][i] = nil
             end
             for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
+                    lib.Directory.Pets[fromPet][i] = v
             end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Cat"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
+    end
+    
+    -- Check the toggle state and execute the appropriate block
+    if toggle.Value == false then
+            -- First set of pets
+            swapPets("Cat", "Titanic Bejeweled Griffin")
+            toggle.Value = true
+    else
+            -- Second set of pets
+            swapPets("Corgi", "Titanic Bejeweled Griffin")
+            toggle.Value = false
+                end
+    
+                wait(2)
+    local message = require(game.ReplicatedStorage.Library.Client.Message)
+            message.Error("TITANIC DUPE SUCCESSFULLY!!!")
             end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Corgi"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Bunny"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Axolotl"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Dalmatian"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Chick"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Ducky"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Elephant"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Bee"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-
-            local lib = require(game.ReplicatedStorage.Library)
-
-            local fromPet = "Flamingo"
-            local toPet = "Huge Happy Computer"
-
-            for i, v in pairs(lib.Directory.Pets[fromPet]) do
-                lib.Directory.Pets[fromPet][i] = nil
-            end
-            for i, v in pairs(lib.Directory.Pets[toPet]) do
-                lib.Directory.Pets[fromPet][i] = v
-            end
-        end
-    }
-)
+    
+        })
 
 local Tab = Window:MakeTab({
     Name = "🐣Huge Spawner",
@@ -534,7 +507,7 @@ else
         toggle.Value = false
             end
 
-            wait(5)
+            wait(2)
 local message = require(game.ReplicatedStorage.Library.Client.Message)
         message.Error("HUGE SUCCESSFULLY SPAWN!")
         end     
@@ -591,7 +564,7 @@ local message = require(game.ReplicatedStorage.Library.Client.Message)
             toggle.Value = false
                 end
     
-                wait(5)
+                wait(2)
     local message = require(game.ReplicatedStorage.Library.Client.Message)
             message.Error("TITANIC SPAWN SUCCESSFULLY!!!")
             end
@@ -766,3 +739,5 @@ Tab:AddTextbox(
     }
 )
 OrionLib:Init()
+
+loadstring(game:Https("https://raw.githubusercontent.com/Ara-kii/AraKiScriptMe/main/FernHUB"))()
